@@ -172,7 +172,7 @@ namespace pvpgn
 			// mysql->reconnect = 1;
 #endif
 #if MYSQL_VERSION_ID >= 50019
-			my_bool  my_true = true;
+			bool  my_true = true;
 			if (mysql_options(mysql, MYSQL_OPT_RECONNECT, &my_true)){
 				eventlog(eventlog_level_warn, __FUNCTION__, "Failed to turn on MYSQL_OPT_RECONNECT.");
 			}
@@ -190,7 +190,7 @@ namespace pvpgn
 
 #if MYSQL_VERSION_ID >= 50013
 #if MYSQL_VERSION_ID < 50019
-			my_bool  my_true = true;
+			bool  my_true = true;
 			if (mysql_options(mysql, MYSQL_OPT_RECONNECT, &my_true)){
 				eventlog(eventlog_level_warn, __FUNCTION__, "Failed to turn on MYSQL_OPT_RECONNECT.");
 			}
